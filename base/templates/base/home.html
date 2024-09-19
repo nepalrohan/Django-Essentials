@@ -1,0 +1,29 @@
+{% extends 'main.html' %}
+{% comment %} {% include 'navbar.html' %} {% endcomment %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    {% block content %}
+    <h1> Home Page </h1>
+<div>
+
+    {% for data in rooms %}
+
+    <div>
+        <h1>{{ data.id}} ----<a href="{% url 'room' room.id %}"> {{data.name}}</a></h1>
+    </div>
+
+    {% endfor %}
+</div>
+
+
+
+    {% endblock content%}
+</body>
+</html>
